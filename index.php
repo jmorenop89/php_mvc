@@ -4,9 +4,7 @@
         require $class.'.php';
     });
 
-    use Models\{Producto,Cliente};
+   use Controllers\ProductoController;
 
-    $p = new Producto();
-    echo $p->create(['name'=>'Pr01','price'=>145.80,'stock'=>10]);
-    #$c = new Cliente();
-    #$c->all();
+   $p = new ProductoController();
+   $p->index();
