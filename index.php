@@ -7,6 +7,6 @@
     use Models\{Producto,Cliente};
 
     $p = new Producto();
-    $p->all();
+    $p->create(['name'=>'Pr02','price'=>145.80,'stock'=>10]);
     #$c = new Cliente();
     #$c->all();

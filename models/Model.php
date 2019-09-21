@@ -4,7 +4,7 @@
 
     class Model{
         public $table;
-        public $primaryKey;
+        public $primaryKey = 'id';
         protected $connection;
         
         public function __construct(){
@@ -14,6 +14,24 @@
         public function all(){
             $sql = "select * from $this->table";
             $list = $this->connection->query($sql)->fetch_all(MYSQLI_ASSOC);
-            var_dump($list);
+            return $list;
+        }
+
+        public function create($data){
+            #$ar = implode(',',$data);
+            #var_dump($ar);
+            $cand = '';
+            $pre = '';
+            foreach($data as $v){
+                if(gettype($v) == 'string'){
+                    $cand.= $pre."'".$v."'";
+                }else{
+                    $cand.= $pre.$v;
+                }
+                $pre=',';
+            }
+            $fields = implode(',',array_keys($data));
+            $sql = "insert into $this->table (id,$fields) values(null,$cand)";
+            echo $sql;
         }
     }
