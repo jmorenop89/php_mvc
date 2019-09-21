@@ -18,8 +18,6 @@
         }
 
         public function create($data){
-            #$ar = implode(',',$data);
-            #var_dump($ar);
             $cand = '';
             $pre = '';
             foreach($data as $v){
@@ -32,6 +30,6 @@
             }
             $fields = implode(',',array_keys($data));
             $sql = "insert into $this->table (id,$fields) values(null,$cand)";
-            echo $sql;
+            return $this->connection->query($sql);
         }
     }
