@@ -1,5 +1,6 @@
 <?php
     spl_autoload_register(function($class){
+        #print($class).'<br>';
         require $class.'.php';
     });
 
@@ -7,6 +8,5 @@
 
     $p = new Producto();
     $p->all();
-    echo '<br>';
-    $c = new Cliente();
-    $c->all();
+    #$c = new Cliente();
+    #$c->all();

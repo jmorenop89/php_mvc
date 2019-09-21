@@ -13,6 +13,7 @@
 
         public function all(){
             $sql = "select * from $this->table";
-            echo $sql;
+            $list = $this->connection->query($sql)->fetch_all(MYSQLI_ASSOC);
+            var_dump($list);
         }
     }
