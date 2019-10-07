@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Lista Productos</h1>
-    <table border="1" width="100%">
+    <table border="1" width="50%">
         <tr>
             <td>Nombre</td>
             <td>Precio</td>
